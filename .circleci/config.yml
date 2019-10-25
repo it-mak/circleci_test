@@ -10,7 +10,7 @@ jobs:
       - checkout
 
       - fast/run_security_tests:
-          #app_uri: "http://test.test"
+          app_uri: "http://test.test:80"
           app_protocol: "http"
           get_internal_ip: hostname -i | grep -o -E '([0-9]{1,3}[\.]){3}[0-9]{1,3}' | head -n1
           test_run_name: "test1"
