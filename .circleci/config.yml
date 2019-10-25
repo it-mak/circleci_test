@@ -16,7 +16,7 @@ jobs:
           test_run_name: "test1"
           test_run_desc: "test1"
           test_run_rps: "1"
-          stop_on_first_fail: "False"
+          stop_on_first_fail: False
           wallarm_fast_port: "9999"
           app_port: "3000"
           test_record_id: "2690" # use your test_record_id
