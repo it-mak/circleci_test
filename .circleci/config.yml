@@ -10,7 +10,7 @@ jobs:
       - checkout
 
       - fast/run_security_tests:
-          app_host: "google-gruyere.appspot.com:80"
+          app_host: "google-gruyere.appspot.com"
           app_port: "80"
           test_run_name: "test1"
           test_run_desc: "test1"
