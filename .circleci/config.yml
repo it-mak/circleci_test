@@ -9,18 +9,17 @@ jobs:
     steps:
       - checkout
 
-      - run:
-          name: Build docker
-          command: |
-            docker build -t app-test .
-
-      - run:
-          name: Run application
-          command: |
-            docker run -d --name app-test -p 3000:3000 app-test
-
       - fast/run_security_tests:
+          test_record_id: "test"
+          app_uri: google-gruyere.appspot.com
+          app_protocol: http
+          get_internal_ip: hostname -i | grep -o -E "([0-9]{1,3}[\.]){3}[0-9]{1,3}" | head -n1
+          test_run_name: test1
+          test_run_desc: test1
+          test_run_rps: 1
+          stop_on_first_fail: False
+          wallarm_fast_port: 9999
           app_port: "3000"
-          test_record_id: "3612" # use your test_record_id
+          test_record_id: "2690" # use your test_record_id
           policy_id: "129" # use your policy_id
           wallarm_api_host: api.wallarm.com
